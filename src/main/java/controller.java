@@ -91,7 +91,6 @@ String password=request.getParameter("password");
                 ex1.printStackTrace();
            }
             Connection con=DriverManager.getConnection("jdbc:Mysql://mysql.railway.internal:3306/railway","root","tJgeYLxTcRZLWRmZRgbwLVQwYcXnWTRz");
-//            Connection con=DriverManager.getConnection("jdbc:Mysql://localhost:3306/host","root","");
             PreparedStatement ps=con.prepareStatement("insert into reg (name,mobile,password) values('"+name+"','"+mobile+"','"+password+"')");
             if (ps.executeUpdate()>0) {
              ps=con.prepareStatement("select * from reg");
